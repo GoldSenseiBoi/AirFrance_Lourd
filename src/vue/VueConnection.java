@@ -14,9 +14,9 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-import controleur.Controleur;
-import controleur.AirFrance_E5;
 import controleur.Admin;
+import controleur.AirFrance_E5;
+import controleur.Controleur;
 
 public class VueConnection extends JFrame implements ActionListener {
 	
@@ -32,7 +32,7 @@ public class VueConnection extends JFrame implements ActionListener {
 		this.setResizable(false);
 		this.setBounds(100, 100, 600, 300);
 		this.setLayout(null);
-		this.getContentPane().setBackground(Color.gray);
+		this.getContentPane().setBackground(Color.white);
 		
 		//inserer le logo
 		ImageIcon uneImage = new ImageIcon("src/images/airfrance1.png");
@@ -42,7 +42,7 @@ public class VueConnection extends JFrame implements ActionListener {
 		
 		//construction du panelForm
 		this.panelForm.setBounds(300, 40, 250, 200);
-		this.panelForm.setBackground(Color.gray);
+		this.panelForm.setBackground(Color.white);
 		this.panelForm.setLayout(new GridLayout(3,2));
 		this.panelForm.add(new JLabel("Email : "));
 		this.panelForm.add(this.txtEmail);
@@ -79,7 +79,7 @@ public class VueConnection extends JFrame implements ActionListener {
 			
 			
 			//on ouvre le logiciel : Vue Générale
-			JOptionPane.showMessageDialog(this, "Bienvenue M/MM" + unUser.getPrenom());
+			JOptionPane.showMessageDialog(this, "Bienvenue " + unUser.getPrenom());
 			
 			AirFrance_E5.rendreVisibleVueConnection(false);
 			AirFrance_E5.rendreVisibleVueGenerale(true, unUser);

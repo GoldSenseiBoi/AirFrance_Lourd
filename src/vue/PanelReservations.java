@@ -1,7 +1,7 @@
 package vue;
 
-import java.awt.GridLayout;
 import java.awt.Color;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -19,10 +19,10 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 
 import controleur.Controleur;
+import controleur.Passager;
 import controleur.Reservations;
 import controleur.Tableau;
 import controleur.Vols;
-import controleur.Passager;
 
 public class PanelReservations extends PanelPrincipal implements ActionListener {
 

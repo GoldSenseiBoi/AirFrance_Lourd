@@ -13,19 +13,14 @@ import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JPasswordField;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
-import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 import controleur.Controleur;
 import controleur.MembreEquipage;
-import controleur.Passager;
 import controleur.Tableau;
 import controleur.Vols;
-import controleur.Admin;
-import controleur.Avions;
 
 public class PanelEquipages extends PanelPrincipal implements ActionListener{
 	

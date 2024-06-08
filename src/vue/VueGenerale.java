@@ -11,8 +11,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import controleur.AirFrance_E5;
 import controleur.Admin;
+import controleur.AirFrance_E5;
 
 public class VueGenerale extends JFrame implements ActionListener {
 	
@@ -40,11 +40,11 @@ public class VueGenerale extends JFrame implements ActionListener {
 		this.setResizable(false);
 		this.setBounds(0, 0, screenWidth, screenHeight);
 		this.setLayout(null);
-		this.getContentPane().setBackground(Color.gray);
+		this.getContentPane().setBackground(Color.white);
 		
 		// Construction du panelMenu
 		this.panelMenu.setBounds(300, 10, 800, 30);
-		this.panelMenu.setBackground(Color.gray);
+		this.panelMenu.setBackground(Color.white);
 		this.panelMenu.setLayout(new GridLayout(1,5));
 		this.panelMenu.add(this.btPassagers);
 		this.panelMenu.add(this.btVols);
