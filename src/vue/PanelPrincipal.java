@@ -12,7 +12,7 @@ public abstract class PanelPrincipal extends JPanel{
 	public PanelPrincipal(String message) {
 		this.setBounds(10,10,1920,1080);
 		this.setLayout(null);
-		this.setBackground(Color.gray);
+		this.setBackground(Color.white);
 		JLabel lbTitre = new JLabel(message);
 		lbTitre.setBounds(450,70,400,30);
 		this.add(lbTitre);

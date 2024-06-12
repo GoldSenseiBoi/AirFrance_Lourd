@@ -18,11 +18,11 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 
+import controleur.Aeroports;
+import controleur.Avions;
 import controleur.Controleur;
 import controleur.Tableau;
 import controleur.Vols;
-import controleur.Avions;
-import controleur.Aeroports;
 
 
 
@@ -45,6 +45,8 @@ private JPanel panelFormAjouter = new JPanel();
     private JTable tableVols;
     private JScrollPane uneScroll;
     private Tableau unTableau;
+
+	private JLabel lblNombreVols = new JLabel("Nombre de vols: 0");
     
     private JPanel panelFiltre = new JPanel();
 	private JButton btFiltrer = new JButton("Filtrer");
@@ -58,34 +60,36 @@ private JPanel panelFormAjouter = new JPanel();
 		
 	        
 	     // Construction du panel ajouter passager
-	        this.panelFormAjouter.setBackground(new Color(135, 206, 235));
-	        this.panelFormAjouter.setBounds(1140, 170, 330, 500);
-	        this.panelFormAjouter.setLayout(new GridLayout(9, 4));
-	        this.panelFormAjouter.add(new JLabel("Numero de vol :"));
-	        this.panelFormAjouter.add(this.txtNumVol);
-	        this.panelFormAjouter.add(new JLabel("Date de départ :"));
-	        this.panelFormAjouter.add(this.txtDateDepart);
-	        this.panelFormAjouter.add(new JLabel("Date d'arrivée :"));
-	        this.panelFormAjouter.add(this.txtDateArrivee);
-	        this.panelFormAjouter.add(new JLabel("Heure de départ :"));
-	        this.panelFormAjouter.add(this.txtHeureDepart);
-	        this.panelFormAjouter.add(new JLabel("Heure d'arrivée :"));
-	        this.panelFormAjouter.add(this.txtHeureArrivee);
-	        this.panelFormAjouter.add(new JLabel("Aeroport de départ :"));
-	        this.panelFormAjouter.add(this.txtIdAeroportDepart);
-	        this.panelFormAjouter.add(new JLabel("Aeroport d'arrivé :"));
-	        this.panelFormAjouter.add(this.txtIdAeroportArrive);
-	        this.panelFormAjouter.add(new JLabel("Avion :"));
-	        this.panelFormAjouter.add(this.txtIdAvion);
-		
-	        this.panelFormAjouter.add(this.btAnnuler);
-	        this.panelFormAjouter.add(this.btEnregistrer);
-	        this.add(this.panelFormAjouter);
-	        
-	      //remplir le comboBox 
-			this.remplirCBXAeroportDepart();
-			this.remplirCBXAeroportArrive();
-			this.remplirCBXAvion();
+		 this.panelFormAjouter.setBackground(new Color(240, 248, 255));
+		 this.panelFormAjouter.setBounds(1140, 170, 330, 500);
+		 this.panelFormAjouter.setLayout(new GridLayout(10, 4)); // Ajout d'une ligne pour le compteur
+		 this.panelFormAjouter.add(new JLabel("Numero de vol :"));
+		 this.panelFormAjouter.add(this.txtNumVol);
+		 this.panelFormAjouter.add(new JLabel("Date de départ :"));
+		 this.panelFormAjouter.add(this.txtDateDepart);
+		 this.panelFormAjouter.add(new JLabel("Date d'arrivée :"));
+		 this.panelFormAjouter.add(this.txtDateArrivee);
+		 this.panelFormAjouter.add(new JLabel("Heure de départ :"));
+		 this.panelFormAjouter.add(this.txtHeureDepart);
+		 this.panelFormAjouter.add(new JLabel("Heure d'arrivée :"));
+		 this.panelFormAjouter.add(this.txtHeureArrivee);
+		 this.panelFormAjouter.add(new JLabel("Aeroport de départ :"));
+		 this.panelFormAjouter.add(this.txtIdAeroportDepart);
+		 this.panelFormAjouter.add(new JLabel("Aeroport d'arrivé :"));
+		 this.panelFormAjouter.add(this.txtIdAeroportArrive);
+		 this.panelFormAjouter.add(new JLabel("Avion :"));
+		 this.panelFormAjouter.add(this.txtIdAvion);
+		 // Ajout du compteur
+		 
+		 this.panelFormAjouter.add(this.btAnnuler);
+		 this.panelFormAjouter.add(this.btEnregistrer);
+		 this.panelFormAjouter.add(this.lblNombreVols);
+		 this.add(this.panelFormAjouter);
+		 
+		 //remplir le comboBox 
+		 this.remplirCBXAeroportDepart();
+		 this.remplirCBXAeroportArrive();
+		 this.remplirCBXAvion();
 			
 			// Construction de la table des passagers
 			String[] entetes = {"ID_Vol", "N° Vol", "Date_Depart", "Heure_Depart", "Aeroport_Depart", "Date_Arrivee", "Heure_Arrivee", "Aeroport_Arrive", "Avion"};
@@ -178,6 +182,8 @@ private JPanel panelFormAjouter = new JPanel();
             matrice[i][8] = unVol.getIdAvion();
             i++;
         }
+
+        lblNombreVols.setText("Nombre de vols: " + lesVols.size());
         return matrice;
     }
 	
